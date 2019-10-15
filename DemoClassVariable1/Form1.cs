@@ -60,7 +60,7 @@ namespace DemoClassVariable1
                 firstNumTextBox.Text = "0";
                 secondNumTextBox.Text = "0";
                 firstNumTextBox.Focus();
-                totalAdditions = 0;
+                totalAdditions--;
             }
                                          
             // Use Convert Class Method
