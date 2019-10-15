@@ -52,15 +52,17 @@ namespace DemoClassVariable1
             double secondNumberDouble = 0;
             double totalDouble;
 
-            if (!Regex.IsMatch(firstNumTextBox.Text, @"[0-9]") || !Regex.IsMatch(secondNumTextBox.Text, @"[0-9]"))
+            totalAdditions++; // or totalAdditions +=1;
+
+            if (!Regex.IsMatch(firstNumTextBox.Text, @"^[0-9]+$") || !Regex.IsMatch(secondNumTextBox.Text, @"^[0-9]+$"))
             {
                 MessageBox.Show("Please enter a number");
                 firstNumTextBox.Text = "0";
                 secondNumTextBox.Text = "0";
                 firstNumTextBox.Focus();
+                totalAdditions = 0;
             }
-
-                             
+                                         
             // Use Convert Class Method
             firstNumberDouble = Convert.ToDouble(firstNumTextBox.Text);
             // Use Parse 
@@ -70,7 +72,7 @@ namespace DemoClassVariable1
 
             labelTotal.Text = Convert.ToString(totalDouble);
 
-            totalAdditions++; // or totalAdditions +=1;
+            
             totalCountLabel.Text = Convert.ToString(totalAdditions);
 
             overallTotalDouble += totalDouble;
